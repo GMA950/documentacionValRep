@@ -55,6 +55,7 @@ Estos criterios son muy generales, y están acotados principalmente a 10:
 
 Después de ir revisando la interfaz analizando los 10 puntos mencionados anteriormente, hemos obtenido una variedad de errores en nuestra interfaz los cuales se fueron corrigiendo. Luego Con el fin de obtener una interacción lo más real posible entre el usuario y el sistema se desarrolló un prototipo del sitio web en Adobe XD, enfocándose en las interfaces relacionadas con las principales tareas a testear.
 
-- Interfaz de inicio de sesión:
-- Interfaz del inicio o página principal del sistema:
-- Interfaz de la sección Inventario:
+
+
+https://user-images.githubusercontent.com/50679273/130844321-c001e8ad-1cc9-4439-8f46-010e3a64b1a6.mp4
+
