@@ -24,4 +24,32 @@ Las tareas que se realizan en el negocio familiar de autopartes son las siguient
 ![image18](https://user-images.githubusercontent.com/50679273/130838097-e5ef3b1f-aeed-428c-9f42-ed6dd4a22bd5.jpg)
 
 - WIREFLOW ANOTADO
+![image14](https://user-images.githubusercontent.com/50679273/130839895-7e9736af-d5dc-4913-8ee8-fd90df8fac5b.png)
+![image8](https://user-images.githubusercontent.com/50679273/130840015-78094205-26c1-4cb9-9f70-ce418dbed7c3.png)
+![image12](https://user-images.githubusercontent.com/50679273/130841649-96177b2b-f8de-4638-b92e-1503993780bc.png)
+![image17](https://user-images.githubusercontent.com/50679273/130841701-b05c73ec-f811-4580-b2f3-4c32250e389e.png)
+![image15](https://user-images.githubusercontent.com/50679273/130841912-7e572944-f587-4b12-a181-a612066b7903.png)
+![image1](https://user-images.githubusercontent.com/50679273/130842082-d77d5da8-a174-4702-b3ed-056e9210d4e0.png)
+
+- PROPUESTA GRAFICA
+  - INICIO DE SESION:
+   ![image11](https://user-images.githubusercontent.com/50679273/130842319-96e79c1f-0537-4f22-b98c-3f69feb86cd4.jpg)
+  - INICIO:
+  ![image10](https://user-images.githubusercontent.com/50679273/130842339-de165cbc-3628-45c7-8419-f9f60bd4505f.jpg)
+  - SECCION DE INVENTARIO:
+  ![image13](https://user-images.githubusercontent.com/50679273/130842351-43aeb279-9bda-45e0-8c77-4faab635902d.jpg)
+  
+  luego de esto se realizo una **Evaluacion por inspeccion** para lo cual se aplico una evaluación heurística, la cual se define como un principio de usabilidad reconocido, específicamente se evaluo si es que nuestra interfaz suele cumplir con las reglas genéricas que responden al set propuestas por el método de las heurísticas de Nielsen. En nuestro rol como “expertos” nos corresponde verificar que nuestro sistema cumpla con dichos criterios.
+Estos criterios son muy generales, y están acotados principalmente a 10:
+
+- Feedback
+- Extender Experiencia de Usuario
+- Control y Libertad
+- Consistencia y Estándar
+- Prevención de Errores
+- Reconocimiento sobre Memoria
+- Flexibilidad y Eficiencia
+- Diseño Minimalista
+- Mensajes de Error Útiles
+- Ayuda y Documentación
 
