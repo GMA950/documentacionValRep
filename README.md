@@ -21,4 +21,7 @@ Las tareas que se realizan en el negocio familiar de autopartes son las siguient
 ### Diseño preeliminar de interaccion
 
 - WIREFLOW
-![alt text](https://imgur.com/xj8NeJ7)
+![image18](https://user-images.githubusercontent.com/50679273/130838097-e5ef3b1f-aeed-428c-9f42-ed6dd4a22bd5.jpg)
+
+- WIREFLOW ANOTADO
+
