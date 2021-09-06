@@ -1,8 +1,7 @@
 # documentacionValRep
 documentación para proyecto de taller de ing de software
 
-# Documento de Requisitos de Usuario
-## (URD)
+# Documento de Requisitos de Usuario (URD)
 
 ## 1. Introduccion
 
