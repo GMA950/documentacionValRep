@@ -1,5 +1,6 @@
-# documentacionValRep
-documentación para proyecto de taller de ing de software
+# Documentacion General de ValRep
+
+Documentación para proyecto de taller de ingeniería de software (2021)
 
 # Documento de Requisitos de Usuario (URD)
 
@@ -21,7 +22,7 @@ Venta: 	Aquí el vendedor atiende a los clientes y se concretan las ventas.
 Actualmente el control del inventario se realiza a lápiz y papel, este se realiza dos veces a la semana y el encargado de realizarlo es el dueño del local, aunque usualmente suele ayudarlo su hijo mayor. Para esta tarea se recorren todos los pasillos y se va registrando el stock de cada producto manualmente. Esto a parte de ser ineficiente e inseguro, toma mucho tiempo, además de ser susceptible a numerosos errores ya sea por el mal recuento de un producto o simplemente en el ingreso de datos en el cuaderno de stock. 
 Por otro lado, en el momento que se necesita encargar nuevo stock a un proveedor, se necesita revisar en este cuaderno el stock producto a producto, lo cual también puede llevar a equivocaciones y puede tomar bastante tiempo en realizar dicha tarea.
 
-### 2.2. Requisito
+### 2.2. Requisitos
 
 Se solicita el desarrollo de una página web la cual contenga el inventario del local, el cual será una lista de los distintos productos disponibles en el local y que contará para cada uno de estos con un código, nombre, cantidad de stock disponible, precio, etc. Además mediante un lector de código de barras se podrá hacer búsquedas de productos para ver información del mismo, como el stock, precio, etc. También tendrá una sección para agregar o eliminar una cierta cantidad de productos, es decir actualizar el stock, ya sea para cuando llega nuevo stock (la idea es que cuando llegue nuevo stock, se lea el codigo de barra y se ponga la cantidad de productos entrantes, el cual se sumará al stock actual en bodega) o cuando se realiza una venta. Para finalizar se plantea agregar una funcionalidad de alerta de bajo stock, el cual enviará una alerta por wtsp, correo electrónico o simplemente una ventana advirtiendo cuando el stock de un producto cae por debajo de un límite determinado por el usuario.
 
