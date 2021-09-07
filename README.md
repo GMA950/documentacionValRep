@@ -166,7 +166,7 @@ ReqSis07: El sistema deberá ser capaz de actualizar el stock dinamicamente ya s
 
 ### 3.1.3. Salida de elementos de bodega
 
-ReqSis07: El sistema deberá tener una sección “carrito de compra” donde una vez el usuario ingrese, mediante la pistola láser se ingresaran los productos salientes, se mostrara información sobre los productos y se implementará un selector para indicar la cantidad que sale de un mismo producto
+- ReqSis07: El sistema deberá tener una sección “carrito de compra” donde una vez el usuario ingrese, mediante la pistola láser se ingresaran los productos salientes, se mostrara información sobre los productos y se implementará un selector para indicar la cantidad que sale de un mismo producto
 
 
 
