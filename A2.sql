@@ -18,15 +18,42 @@ USE `valrepuestos`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `productos`
+-- Table structure for table `editar`
 --
 
-DROP TABLE IF EXISTS `productos`;
+DROP TABLE IF EXISTS `editar`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `productos` (
+CREATE TABLE `editar` (
+  `id_usuario` int NOT NULL,
   `codigo` int NOT NULL,
-  `id` int NOT NULL,
+  `fecha` datetime NOT NULL,
+  `observaciones` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`,`codigo`),
+  KEY `fk2_idx` (`codigo`),
+  CONSTRAINT `fk3` FOREIGN KEY (`codigo`) REFERENCES `producto` (`codigo`),
+  CONSTRAINT `fk4` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `editar`
+--
+
+LOCK TABLES `editar` WRITE;
+/*!40000 ALTER TABLE `editar` DISABLE KEYS */;
+/*!40000 ALTER TABLE `editar` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `producto`
+--
+
+DROP TABLE IF EXISTS `producto`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `producto` (
+  `codigo` int NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `categoria` varchar(45) NOT NULL,
   `fabricante` varchar(45) NOT NULL,
@@ -34,27 +61,22 @@ CREATE TABLE `productos` (
   `version` varchar(45) DEFAULT NULL,
   `año` int DEFAULT NULL,
   `precio` int NOT NULL DEFAULT '0',
-  `stock` int NOT NULL DEFAULT '0',
+  `num_stock` int NOT NULL DEFAULT '0',
   `idproveedor` int DEFAULT NULL,
   `origen` varchar(45) DEFAULT NULL,
   `ubicacion` varchar(45) DEFAULT NULL,
   `detalles` varchar(200) DEFAULT NULL,
-  `lastmod` int DEFAULT NULL,
-  PRIMARY KEY (`codigo`),
-  KEY `fk_idprov_idx` (`idproveedor`),
-  KEY `fk_iduser_idx` (`lastmod`),
-  CONSTRAINT `fk_idprov` FOREIGN KEY (`idproveedor`) REFERENCES `proveedor` (`idproveedor`),
-  CONSTRAINT `fk_iduser` FOREIGN KEY (`lastmod`) REFERENCES `usuarios` (`idusuario`)
+  PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `productos`
+-- Dumping data for table `producto`
 --
 
-LOCK TABLES `productos` WRITE;
-/*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `productos` ENABLE KEYS */;
+LOCK TABLES `producto` WRITE;
+/*!40000 ALTER TABLE `producto` DISABLE KEYS */;
+/*!40000 ALTER TABLE `producto` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -65,7 +87,7 @@ DROP TABLE IF EXISTS `proveedor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `proveedor` (
-  `idproveedor` int NOT NULL AUTO_INCREMENT,
+  `id_proveedor` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
   `telefono` int NOT NULL,
   `correo` varchar(45) NOT NULL,
@@ -73,7 +95,7 @@ CREATE TABLE `proveedor` (
   `region` varchar(45) DEFAULT NULL,
   `ciudad` varchar(45) DEFAULT NULL,
   `zipcode` int DEFAULT NULL,
-  PRIMARY KEY (`idproveedor`)
+  PRIMARY KEY (`id_proveedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -87,34 +109,62 @@ LOCK TABLES `proveedor` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `usuarios`
+-- Table structure for table `proveer`
 --
 
-DROP TABLE IF EXISTS `usuarios`;
+DROP TABLE IF EXISTS `proveer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `usuarios` (
-  `idusuario` int NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) NOT NULL,
-  `apellido1` varchar(45) DEFAULT NULL,
-  `apellido2` varchar(45) DEFAULT NULL,
-  `rut` int NOT NULL,
-  `usuario` varchar(45) NOT NULL,
-  `telefono` int DEFAULT NULL,
-  `correo` varchar(45) DEFAULT NULL,
-  `cargo` varchar(45) DEFAULT NULL,
-  `admin` tinyint NOT NULL DEFAULT '0',
-  PRIMARY KEY (`idusuario`)
+CREATE TABLE `proveer` (
+  `id_proveedor` int NOT NULL,
+  `codigo` int NOT NULL,
+  PRIMARY KEY (`id_proveedor`,`codigo`),
+  KEY `fk1_idx` (`id_proveedor`),
+  KEY `fk2_idx` (`codigo`),
+  CONSTRAINT `fk1` FOREIGN KEY (`id_proveedor`) REFERENCES `proveedor` (`id_proveedor`),
+  CONSTRAINT `fk2` FOREIGN KEY (`codigo`) REFERENCES `producto` (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `usuarios`
+-- Dumping data for table `proveer`
 --
 
-LOCK TABLES `usuarios` WRITE;
-/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+LOCK TABLES `proveer` WRITE;
+/*!40000 ALTER TABLE `proveer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `proveer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usuario` (
+  `id_usuario` int NOT NULL AUTO_INCREMENT,
+  `nombre_usuario` varchar(45) NOT NULL,
+  `cargo` varchar(45) NOT NULL,
+  `admin` varchar(45) DEFAULT NULL,
+  `nombres` varchar(45) DEFAULT NULL,
+  `apellido1` varchar(45) DEFAULT NULL,
+  `rut` int NOT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `telefono` int DEFAULT NULL,
+  `correo` varchar(45) DEFAULT NULL,
+  `codigo` int DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuario`
+--
+
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -134,4 +184,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-21 19:38:03
+-- Dump completed on 2021-09-23 19:07:42
